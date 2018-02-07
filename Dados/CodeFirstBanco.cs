@@ -24,7 +24,14 @@ namespace AutenticacaoEfCookie.Dados
 
             contexto.PermissoesNoBanco.Add(permissao);
 
-            
+            var usuariopermissao = new UsuarioPermissao(){
+                IdUsuario = usuario.IdUsuario,
+                IdPermissao = permissao.IdPermissao
+            };
+
+            contexto.UsuariosPermissoesNoBanco.Add(usuariopermissao);
+            contexto.SaveChanges();
+
         }
     }
 }
